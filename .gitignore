@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+fires_env/
+venv/
+env/
+.venv/
+
+# VS Code settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Jupyter/IPython
+.ipynb_checkpoints/
+
+# Test/coverage
+htmlcov/
+.coverage
+.tox/
+
+# Node/npm (if any frontend tooling)
+node_modules/
+
+# Misc
+*.swp
+*.bak
+notes/

@@ -1,0 +1,208 @@
+/* FireShark Main Stylesheet */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, monospace;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+    background: #151922;
+}
+.container {
+    background: #1a1e2b;
+    padding: 24px 20px 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+    margin-top: 28px;
+}
+.brand-header {
+    margin-bottom: 22px;
+}
+.brand-logo img {
+    height: 40px;
+}
+.brand-title {
+    font-size: 1.7em;
+    font-weight: bold;
+    color: #1fb6ff;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 4px #23263a;
+}
+.brand-tagline {
+    font-size: 1em;
+    color: #ff6a00;
+    margin-left: 10px;
+    font-weight: 500;
+}
+.upload-area {
+    border: 1.5px dashed #1fb6ff;
+    border-radius: 7px;
+    padding: 24px;
+    text-align: center;
+    margin: 14px 0;
+    background: #151922;
+}
+.upload-area:hover, .upload-area.dragover {
+    border-color: #ff6a00;
+    background-color: #23263a;
+}
+.upload-btn {
+    background: #ff6a00;
+    color: #fff;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 8px;
+    font-weight: bold;
+    box-shadow: 0 1px 4px #23263a;
+}
+.upload-btn:hover {
+    background: #d35400;
+}
+.result {
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 4px;
+}
+.success {
+    background: #23263a;
+    border: 1px solid #1fb6ff;
+    color: #1fb6ff;
+}
+.error {
+    background: #2a1a1a;
+    border: 1px solid #ff6a00;
+    color: #ff6a00;
+}
+.loading {
+    text-align: center;
+    color: #1fb6ff;
+}
+.supported-formats {
+    background: #23263a;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 12px 0;
+    color: #1fb6ff;
+    font-weight: 500;
+}
+#scanResults {
+    margin-top: 18px;
+}
+.scan-card {
+    background: #151922;
+    border: 1.5px solid #1fb6ff;
+    border-radius: 7px;
+    margin-bottom: 14px;
+    padding: 14px 10px 10px 10px;
+    color: #1fb6ff;
+    font-family: 'Share Tech Mono', monospace;
+    box-shadow: 0 1px 8px #23263a;
+}
+.scan-header {
+    font-size: 1.05em;
+    font-weight: bold;
+    color: #ff6a00;
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+}
+.scan-header .icon {
+    margin-right: 6px;
+    font-size: 1.1em;
+}
+.scan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 7px;
+}
+.scan-table th, .scan-table td {
+    border: 1px solid #1fb6ff;
+    padding: 6px 8px;
+    text-align: left;
+}
+.scan-table th {
+    background: #1a1e2b;
+    color: #ff6a00;
+}
+.scan-table td {
+    background: #151922;
+}
+.timeline-bar {
+    width: 100%;
+    height: 14px;
+    background: #23263a;
+    border-radius: 3px;
+    margin-top: 6px;
+    position: relative;
+}
+.timeline-marker {
+    position: absolute;
+    top: 0;
+    height: 14px;
+    width: 5px;
+    background: #ff6a00;
+    border-radius: 2px;
+}
+.timeline-label {
+    font-size: 0.9em;
+    color: #ff6a00;
+    margin-top: 2px;
+}
+.port-tag {
+    display: inline-block;
+    background: #23263a;
+    color: #1fb6ff;
+    border: 1px solid #1fb6ff;
+    border-radius: 3px;
+    padding: 2px 7px;
+    margin: 2px 2px 2px 0;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.port-tag.well-known {
+    background: #ff6a00;
+    color: #fff;
+    border-color: #ff6a00;
+}
+.port-tag:hover {
+    background: #1fb6ff;
+    color: #23263a;
+}
+#scanSummary {
+    margin-top: 18px;
+    background: #1a1e2b;
+    border-radius: 6px;
+    padding: 12px;
+    color: #1fb6ff;
+    font-size: 1em;
+    box-shadow: 0 0 6px #1fb6ff44;
+}
+#showAllBtn, #showRawBtn {
+    background: #ff6a00;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 8px 6px 0 0;
+    padding: 6px 14px;
+    cursor: pointer;
+    box-shadow: 0 1px 4px #23263a;
+}
+#showAllBtn:hover, #showRawBtn:hover {
+    background: #d35400;
+}
+#rawJson {
+    margin-top: 12px;
+    background: #151922;
+    border-radius: 6px;
+    padding: 12px;
+    color: #1fb6ff;
+    font-size: 1em;
+    box-shadow: 0 0 6px #1fb6ff44;
+}
+.file-input {
+    display: none !important;
+}

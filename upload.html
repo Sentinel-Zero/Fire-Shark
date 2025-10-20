@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 FireShark - PCAP File Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="brand-header">
+            <span class="brand-logo"><img src="images/logo.png" alt="FireShark Logo" style="height:100px;width:auto;vertical-align:middle;"></span>
+            <span class="brand-title">FireShark</span>
+            <span class="brand-tagline">Cyber Threat & Scan Analyzer</span>
+        </div>
+        
+        <div class="supported-formats">
+            <strong>Supported File Types:</strong> .pcap, .cap, .pcapng
+        </div>
+
+        <div class="upload-area" id="uploadArea">
+            <p style="color: #ff6a00; font-size: 1.1em; font-weight: 500;">📁 Click here or drag and drop your PCAP file</p>
+            <p style="color: #0099cc; font-size: 14px; font-weight: 500;">Maximum file size: 50MB</p>
+            <input type="file" id="fileInput" class="file-input" accept=".pcap,.cap,.pcapng">
+            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                Select File
+            </button>
+        </div>
+
+        <div class="loading" id="loading" style="display:none;">
+            <p>⏳ Analyzing PCAP file...</p>
+        </div>
+
+        <div class="result" id="result"></div>
+        <div id="scanSummary"></div>
+        <button id="showAllBtn" style="display:none;margin-bottom:10px;" onclick="showAllDetails()">Show All Details</button>
+        <div id="scanResults"></div>
+        <button id="showRawBtn" style="display:none;margin-bottom:10px;" onclick="toggleRawJson()">Show Raw Data</button>
+        <div id="rawJson" style="display:none;"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

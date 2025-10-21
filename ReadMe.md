@@ -1,4 +1,4 @@
-# 🔥 FireShark
+# <img src="images/logo.png" alt="FireShark" width="32"/> FireShark
 
 **FireShark** is a simple network forensics tool that analyzes packet captures (PCAPs) to reveal SYN port scans. It provides a clean, interactive web UI for uploading PCAP files and visualizing detected SYN scan events over time.
 

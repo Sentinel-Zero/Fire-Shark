@@ -14,9 +14,10 @@ This branch focuses on classifying scans by **TCP handshake outcomes** only. It 
 | `SYN → (no reply / timeout)` | **Filtered / silently dropped** (firewall) or loss. Suspicious if repeated across many ports. | Log; correlate over time |
 | `SYN → SYN+ACK → (no client reply)` | Possible loss, IDS interference, or scanner not following through. Suspicious in bulk. | Log; correlate over time |
 
-> Implementation note: treat SYN retransmits as duplicates (same 4-tuple within a short RTT window).
+> Implementation note: treat SYN retransmits as duplicates (same 4-tuple within a short round trip time RTT window).
 
 ### Out of Scope for This Branch (to handle in separate detectors)
+- Timeline (digging up a pcap with mutliple scans at dif times)
 - FIN/NULL/XMAS scans (non-handshake flag probes)
 - ACK-only firewall probes
 - UDP scans (ICMP Port Unreachable behavior)

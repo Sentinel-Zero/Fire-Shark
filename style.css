@@ -1,4 +1,4 @@
-# Scan type labels
+/* Scan type labels */  y
 .scan-type-label {
     display: inline-block;
     background: #23263a;
@@ -68,10 +68,10 @@ body {
     font-size: 1.7em;
     font-weight: bold;
     color: #1fb6ff;
-    border-left: 4px solid #1fb6ff;
     margin-bottom: 10px;
     letter-spacing: 1px;
     text-shadow: 0 1px 4px #23263a;
+    padding-left: 32px;
 }
 .brand-tagline {
     font-size: 1em;

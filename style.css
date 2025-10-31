@@ -1,3 +1,47 @@
+# Scan type labels
+.scan-type-label {
+    display: inline-block;
+    background: #23263a;
+    color: #fff;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin: 0 4px 2px 0;
+    font-size: 0.97em;
+    font-weight: 500;
+    border: 1.5px solid #1fb6ff;
+}
+.scan-type-label:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.scan-type-label:contains('full_handshake') { border-color: #1fb6ff; background: #1a1e2b; color: #1fb6ff; }
+.scan-type-label:contains('half_open_rst') { border-color: #ff6a00; background: #2a1a1a; color: #ff6a00; }
+.scan-type-label:contains('half_open_silent') { border-color: #ffb300; background: #2a1a1a; color: #ffb300; }
+.scan-type-label:contains('syn_rst') { border-color: #b300ff; background: #23263a; color: #b300ff; }
+.scan-type-label:contains('syn_timeout') { border-color: #888; background: #23263a; color: #888; }
+
+/* Evidence badge */
+.evidence-badge {
+    display: inline-block;
+    background: #23263a;
+    color: #fff;
+    border-radius: 3px;
+    padding: 1px 7px;
+    margin: 1px 2px 1px 0;
+    font-size: 0.93em;
+    border: 1px solid #1fb6ff;
+}
+.evidence-badge.syn { background: #1fb6ff; color: #fff; border-color: #1fb6ff; }
+.evidence-badge.synack { background: #ffb300; color: #23263a; border-color: #ffb300; }
+.evidence-badge.ack { background: #00c853; color: #fff; border-color: #00c853; }
+.evidence-badge.rst { background: #ff6a00; color: #fff; border-color: #ff6a00; }
+.evidence-badge.noreply { background: #888; color: #fff; border-color: #888; }
+
 /* FireShark Main Stylesheet */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, monospace;
@@ -5,6 +49,7 @@ body {
     margin: 0 auto;
     padding: 0;
     background: #151922;
+    color: #fff;
 }
 .container {
     background: #1a1e2b;
@@ -23,12 +68,15 @@ body {
     font-size: 1.7em;
     font-weight: bold;
     color: #1fb6ff;
+    border-left: 4px solid #1fb6ff;
+    margin-bottom: 10px;
     letter-spacing: 1px;
     text-shadow: 0 1px 4px #23263a;
 }
 .brand-tagline {
     font-size: 1em;
     color: #ff6a00;
+    letter-spacing: 0.5px;
     margin-left: 10px;
     font-weight: 500;
 }
@@ -122,11 +170,15 @@ body {
     text-align: left;
 }
 .scan-table th {
-    background: #1a1e2b;
-    color: #ff6a00;
+    background: #23263a;
+    color: #fff;
+    font-weight: 600;
+    border: 1px solid #1fb6ff;
 }
 .scan-table td {
     background: #151922;
+    color: #fff;
+    border: 1px solid #1fb6ff;
 }
 .timeline-bar {
     width: 100%;
@@ -153,6 +205,7 @@ body {
     display: inline-block;
     background: #23263a;
     color: #1fb6ff;
+    font-weight: 500;
     border: 1px solid #1fb6ff;
     border-radius: 3px;
     padding: 2px 7px;
@@ -205,4 +258,19 @@ body {
 }
 .file-input {
     display: none !important;
+}
+
+/* Scan group header: high contrast, white text */
+.scan-group-header {
+    background: #23263a;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 6px 6px 0 0;
+    padding: 10px 12px;
+    margin-bottom: 0;
+    border-bottom: 1.5px solid #1fb6ff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }

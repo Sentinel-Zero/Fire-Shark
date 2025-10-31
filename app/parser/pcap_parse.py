@@ -3,7 +3,7 @@ from collections import Counter, defaultdict
 from scapy.all import PcapReader, IP, IPv6, TCP, UDP
 from typing import Dict, Any
 import os
-from .scan_detect import detect_scans
+from .scan_detect import scan_detect
 
 
 def summarize_pcap(pcap_path: str, max_packets: int = 250000) -> Dict[str, Any]:
@@ -25,6 +25,7 @@ def summarize_pcap(pcap_path: str, max_packets: int = 250000) -> Dict[str, Any]:
     # Stream read
     packets = []
     with PcapReader(pcap_path) as pr:
+        # for each packet in the capture
         for i, pkt in enumerate(pr):
             if i >= max_packets:
                 break
@@ -40,7 +41,9 @@ def summarize_pcap(pcap_path: str, max_packets: int = 250000) -> Dict[str, Any]:
 
             # L3 address extraction
             src = dst = None
+
             l3 = pkt.getlayer(IP) or pkt.getlayer(IPv6)
+
             if l3:
                 src = l3.src
                 dst = l3.dst
@@ -79,7 +82,8 @@ def summarize_pcap(pcap_path: str, max_packets: int = 250000) -> Dict[str, Any]:
 
     # Timeline as sorted list of {t: second_since_start, count}
     timeline_list = [{"t": k, "count": timeline[k]} for k in sorted(timeline.keys())]
-    scan_events = detect_scans(packets)
+    scan_events = scan_detect(packets, include_aux=True)
+
     return {
         "file": os.path.basename(pcap_path),
         "total_packets": total,

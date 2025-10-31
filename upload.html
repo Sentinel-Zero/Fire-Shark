@@ -32,6 +32,17 @@
         </div>
 
         <div class="result" id="result"></div>
+        <div id="scanLegend" style="margin-bottom:12px;">
+            <strong>Scan Type Legend:</strong>
+            <ul style="margin:6px 0 0 18px; font-size:0.98em;">
+                <li><b>full_handshake</b>: SYN → SYN+ACK → ACK (legitimate or connect scan)</li>
+                <li><b>half_open_rst</b>: SYN → SYN+ACK → RST (half-open SYN scan)</li>
+                <li><b>half_open_silent</b>: SYN → SYN+ACK → (no client reply)</li>
+                <li><b>syn_rst</b>: SYN → RST (closed port, auxiliary)</li>
+                <li><b>syn_timeout</b>: SYN → (no reply/timeout, auxiliary)</li>
+            </ul>
+            <span style="font-size:0.95em; color:#888;">Evidence: handshake sequence observed for each scan event.</span>
+        </div>
         <div id="scanSummary"></div>
         <button id="showAllBtn" style="display:none;margin-bottom:10px;" onclick="showAllDetails()">Show All Details</button>
         <div id="scanResults"></div>

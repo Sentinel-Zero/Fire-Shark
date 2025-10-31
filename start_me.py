@@ -1,6 +1,7 @@
 import subprocess
 import time
 import platform
+import webbrowser
 
 IS_WINDOWS = platform.system() == "Windows"
 
@@ -11,7 +12,7 @@ def main():
         backend_cmd = (
             'start "FireShark Backend" cmd /k '
             '"call .\\fires_env\\Scripts\\activate && '
-            'python -m uvicorn app.app:app --reload --port 8000"'
+            'python -m uvicorn app.app:app --reload --host 0.0.0.0 --port 8000"'
         )
         subprocess.Popen(backend_cmd, shell=True)
 
@@ -23,6 +24,9 @@ def main():
         )
         subprocess.Popen(frontend_cmd, shell=True)
 
+        time.sleep(2)
+        # Open browser to frontend
+        webbrowser.open("http://localhost:8080/upload.html")
     else:
         print("This script is designed for Windows terminals.")
 
